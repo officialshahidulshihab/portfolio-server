@@ -9,9 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 // Allow requests from Next.js frontend (default 3000, or via env variable)
-app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
-}));
+app.use(cors()); // Allow all origins to prevent CORS issues after deployment
 app.use(express.json());
 
 // MongoDB Connection
