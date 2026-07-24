@@ -70,7 +70,7 @@ app.post("/api/contact", async (req, res) => {
     res.status(201).json({ success: true });
   } catch (error) {
     console.error("Error saving contact:", error);
-    res.status(500).json({ success: false, error: "Failed to save contact" });
+    res.status(500).json({ success: false, error: "Failed to save contact", details: error.message });
   }
 });
 
